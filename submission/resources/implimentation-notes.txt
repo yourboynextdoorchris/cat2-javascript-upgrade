@@ -1,0 +1,16 @@
+IMPLEMENTATION NOTES
+
+Task 1: Dynamic Project Display
+Implemented JavaScript to dynamically display property cards using an array of objects and the forEach() method.
+
+Task 2: Property Wishlist
+Created a wishlist feature that allows users to add and remove property names dynamically using DOM manipulation.
+
+Task 3: Form Validation
+Implemented client-side validation for the contact form using JavaScript to ensure all required fields are completed before submission.
+
+Task 4: Local Storage
+Used localStorage to save the user's name so it is automatically displayed when the page is revisited or refreshed.
+
+Task 5: Hero Banner Interaction
+Added a click event to the hero banner that toggles the visibility of the welcome message using classList.toggle().
