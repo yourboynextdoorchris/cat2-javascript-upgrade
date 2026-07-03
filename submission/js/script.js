@@ -67,3 +67,29 @@ button.addEventListener("click", function () {
 
     input.value = "";
 });
+
+
+const form = document.getElementById("contactForm");
+const feedback = document.getElementById("feedback");
+
+form.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (username === "" || email === "" || message === "") {
+
+        feedback.textContent = "Please fill in all the fields.";
+        feedback.style.color = "red";
+        return;
+    }
+
+    feedback.textContent =
+        "Thank you, " + username + "! Your message has been received.";
+
+    feedback.style.color = "green";
+
+});
