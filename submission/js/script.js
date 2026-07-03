@@ -69,9 +69,22 @@ button.addEventListener("click", function () {
 });
 
 
+
 const form = document.getElementById("contactForm");
 const feedback = document.getElementById("feedback");
 
+// Load saved name when page opens
+window.addEventListener("load", function () {
+
+    const savedName = localStorage.getItem("username");
+
+    if (savedName) {
+        document.getElementById("username").value = savedName;
+    }
+
+});
+
+// Form submission
 form.addEventListener("submit", function (event) {
 
     event.preventDefault();
@@ -83,13 +96,22 @@ form.addEventListener("submit", function (event) {
     if (username === "" || email === "" || message === "") {
 
         feedback.textContent = "Please fill in all the fields.";
+
         feedback.style.color = "red";
+
         return;
     }
 
+    // Save name to localStorage
+    localStorage.setItem("username", username);
+
     feedback.textContent =
-        "Thank you, " + username + "! Your message has been received.";
+        "Thank you, " + username + "! Your message has been received successfully.";
 
     feedback.style.color = "green";
+
+    // Clear the email and message fields
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
 
 });
