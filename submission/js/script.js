@@ -73,7 +73,7 @@ button.addEventListener("click", function () {
 const form = document.getElementById("contactForm");
 const feedback = document.getElementById("feedback");
 
-// Load saved name when page opens
+
 window.addEventListener("load", function () {
 
     const savedName = localStorage.getItem("username");
@@ -84,7 +84,7 @@ window.addEventListener("load", function () {
 
 });
 
-// Form submission
+
 form.addEventListener("submit", function (event) {
 
     event.preventDefault();
@@ -102,7 +102,7 @@ form.addEventListener("submit", function (event) {
         return;
     }
 
-    // Save name to localStorage
+
     localStorage.setItem("username", username);
 
     feedback.textContent =
@@ -114,4 +114,12 @@ form.addEventListener("submit", function (event) {
     document.getElementById("email").value = "";
     document.getElementById("message").value = "";
 
+});
+
+
+const hero = document.querySelector(".hero");
+const heroContent = document.querySelector(".hero-content");
+
+hero.addEventListener("click", function () {
+    heroContent.classList.toggle("show");
 });
